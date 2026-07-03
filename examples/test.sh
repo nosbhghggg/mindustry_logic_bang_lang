@@ -48,8 +48,10 @@ find . -name '*.mdtlbl' -print0 | cut -zc3- | while read -rd ''; do
     f=$REPLY
     printf 'compile %q\n' "$f"
     mindustry_logic_bang_lang c < "$f" >&- && continue
+    LEC=$?
 
-    echo $'\e[1;31m''compile failed!'
+    echo $'\e[1;31m'"compile failed! (code $LEC)"$'\e[0m'
+    exit $LEC
 done
 
 coproc ext {
