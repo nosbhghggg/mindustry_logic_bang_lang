@@ -263,6 +263,7 @@ pub const HELP_MSG: &str = concat_lines! {
     "output to stdout";
     "error to stderr";
     "Learning this language, from mindustry_logic_bang_lang/examples/README.md";
+    ;
     "Compilation Example (bang lang into logic code):";
     "\t", "Run `mindustry_logic_bang_lang cl < input.mdtlbl > output.logic'";
     ;
