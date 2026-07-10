@@ -563,39 +563,18 @@
             "printchar ${1:65};"
         ]
     },
-    "生成子弹 (特权指令)\\nresult from index x y rotation team owner damage velocityScl lifeScl aimX aimY": {
+    "生成子弹 (特权指令)": {
         "prefix": "bullet",
-        "description": "生成子弹 (特权指令)\\nresult from index x y rotation team owner damage velocityScl lifeScl aimX aimY",
+        "description": "生成子弹 (特权指令)",
         "body": [
-            "${1:result} = bullet ${2:@dagger} ${3:0} ${4:x} ${5:y} ${6:angle} ${7:null} ${8:null} ${9:-1} ${10:1} ${11:1} ${12:-1} ${13:-1};"
+            "bullet result @dagger 0 x y angle null null -1 1 1 -1 -1;"
         ]
     },
-    "圆形区域查询单位 (特权指令)\\nteam x y radius": {
-        "prefix": "query.circle.unit",
-        "description": "圆形区域查询单位 (特权指令)\\nteam x y radius",
+    "区域查询 (circle|rect) (unit|building) (特权指令)": {
+        "prefix": "query",
+        "description": "区域查询 (circle|rect) (unit|building) (特权指令)",
         "body": [
-            "query circle unit ${1:null} ${2:0} ${3:0} ${4:10} 0;"
-        ]
-    },
-    "圆形区域查询建筑 (特权指令)\\nteam x y radius": {
-        "prefix": "query.circle.building",
-        "description": "圆形区域查询建筑 (特权指令)\\nteam x y radius",
-        "body": [
-            "query circle building ${1:null} ${2:0} ${3:0} ${4:10} 0;"
-        ]
-    },
-    "矩形区域查询单位 (特权指令)\\nteam x y width height": {
-        "prefix": "query.rect.unit",
-        "description": "矩形区域查询单位 (特权指令)\\nteam x y width height",
-        "body": [
-            "query rect unit ${1:null} ${2:0} ${3:0} ${4:10} ${5:10};"
-        ]
-    },
-    "矩形区域查询建筑 (特权指令)\\nteam x y width height": {
-        "prefix": "query.rect.building",
-        "description": "矩形区域查询建筑 (特权指令)\\nteam x y width height",
-        "body": [
-            "query rect building ${1:null} ${2:0} ${3:0} ${4:10} ${5:10};"
+            "query circle unit null 0 0 10 10;"
         ]
     },
     "播放音乐 (特权指令)\\nname interrupt": {
@@ -1830,58 +1809,58 @@
             "sensor ${2:color} $1 @color;"
         ]
     },
-    "建造点 x 坐标": {
+    "建造或拆除点X": {
         "prefix": "sensor.buildX",
-        "description": "建造点 x 坐标",
+        "description": "建造或拆除点X",
         "body": [
             "sensor ${2:buildX} $1 @buildX;"
         ]
     },
-    "建造点 y 坐标": {
+    "建造或拆除点Y": {
         "prefix": "sensor.buildY",
-        "description": "建造点 y 坐标",
+        "description": "建造或拆除点Y",
         "body": [
             "sensor ${2:buildY} $1 @buildY;"
         ]
     },
-    "ping 标记 x 坐标": {
+    "标记X": {
         "prefix": "sensor.pingX",
-        "description": "ping 标记 x 坐标",
+        "description": "标记X",
         "body": [
             "sensor ${2:pingX} $1 @pingX;"
         ]
     },
-    "ping 标记 y 坐标": {
+    "标记Y": {
         "prefix": "sensor.pingY",
-        "description": "ping 标记 y 坐标",
+        "description": "标记Y",
         "body": [
             "sensor ${2:pingY} $1 @pingY;"
         ]
     },
-    "ping 标记文本": {
+    "标记文本": {
         "prefix": "sensor.pingText",
-        "description": "ping 标记文本",
+        "description": "标记文本",
         "body": [
             "sensor ${2:pingText} $1 @pingText;"
         ]
     },
-    "是否正在建造": {
+    "正在建造的建筑": {
         "prefix": "sensor.building",
-        "description": "是否正在建造",
+        "description": "正在建造的建筑",
         "body": [
             "sensor ${2:building} $1 @building;"
         ]
     },
-    "是否正在拆除": {
+    "正在拆除的建筑": {
         "prefix": "sensor.breaking",
-        "description": "是否正在拆除",
+        "description": "正在拆除的建筑",
         "body": [
             "sensor ${2:breaking} $1 @breaking;"
         ]
     },
-    "是否在飞行": {
+    "是否飞行": {
         "prefix": "sensor.flying",
-        "description": "是否在飞行",
+        "description": "是否飞行",
         "body": [
             "sensor ${2:flying} $1 @flying;"
         ]
@@ -1893,30 +1872,30 @@
             "sensor ${2:maxUnits} $1 @maxUnits;"
         ]
     },
-    "选中的方块类型": {
+    "建造栏选择的建筑": {
         "prefix": "sensor.selectedBlock",
-        "description": "选中的方块类型",
+        "description": "建造栏选择的建筑",
         "body": [
             "sensor ${2:selectedBlock} $1 @selectedBlock;"
         ]
     },
-    "选中的方块旋转": {
+    "建造栏建造朝向": {
         "prefix": "sensor.selectedRotation",
-        "description": "选中的方块旋转",
+        "description": "建造栏建造朝向",
         "body": [
             "sensor ${2:selectedRotation} $1 @selectedRotation;"
         ]
     },
-    "子弹寿命": {
+    "子弹可存活时间": {
         "prefix": "sensor.bulletLifetime",
-        "description": "子弹寿命",
+        "description": "子弹可存活时间",
         "body": [
             "sensor ${2:bulletLifetime} $1 @bulletLifetime;"
         ]
     },
-    "子弹时间": {
+    "子弹已存活时间": {
         "prefix": "sensor.bulletTime",
-        "description": "子弹时间",
+        "description": "子弹已存活时间",
         "body": [
             "sensor ${2:bulletTime} $1 @bulletTime;"
         ]
