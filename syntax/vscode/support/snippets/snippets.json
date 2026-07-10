@@ -465,9 +465,9 @@
             "message ${1:announce} ${2:3} ${3:@wait};"
         ]
     },
-    "(pan|zoom|ztop)控制玩家游戏视角": {
+    "(pan|zoom|stop)控制玩家游戏视角": {
         "prefix": "cutscene",
-        "description": "(pan|zoom|ztop)控制玩家游戏视角",
+        "description": "(pan|zoom|stop)控制玩家游戏视角",
         "body": [
             "cutscene ${1:pan} ${2:100} ${3:100} ${4:0.06} ${5:0};"
         ]
@@ -554,6 +554,55 @@
         "description": "将地图本地化文本属性值添加到文本缓冲区中。\\n要在地图编辑器中设置地图本地化包，请检查 [accent]地图信息 > 本地化包[]。\\n如果客户端是移动设备，则尝试首先打印以 .mobile 结尾的属性。",
         "body": [
             "localeprint ${2:\"${1:name}\"};"
+        ]
+    },
+    "按字符码打印字符 (如 65='A')": {
+        "prefix": "printchar",
+        "description": "按字符码打印字符 (如 65='A')",
+        "body": [
+            "printchar ${1:65};"
+        ]
+    },
+    "生成子弹 (特权指令)\\nresult from index x y rotation team owner damage velocityScl lifeScl aimX aimY": {
+        "prefix": "bullet",
+        "description": "生成子弹 (特权指令)\\nresult from index x y rotation team owner damage velocityScl lifeScl aimX aimY",
+        "body": [
+            "${1:result} = bullet ${2:@dagger} ${3:0} ${4:x} ${5:y} ${6:angle} ${7:null} ${8:null} ${9:-1} ${10:1} ${11:1} ${12:-1} ${13:-1};"
+        ]
+    },
+    "圆形区域查询单位 (特权指令)\\nteam x y radius": {
+        "prefix": "query.circle.unit",
+        "description": "圆形区域查询单位 (特权指令)\\nteam x y radius",
+        "body": [
+            "query circle unit ${1:null} ${2:0} ${3:0} ${4:10} 0;"
+        ]
+    },
+    "圆形区域查询建筑 (特权指令)\\nteam x y radius": {
+        "prefix": "query.circle.building",
+        "description": "圆形区域查询建筑 (特权指令)\\nteam x y radius",
+        "body": [
+            "query circle building ${1:null} ${2:0} ${3:0} ${4:10} 0;"
+        ]
+    },
+    "矩形区域查询单位 (特权指令)\\nteam x y width height": {
+        "prefix": "query.rect.unit",
+        "description": "矩形区域查询单位 (特权指令)\\nteam x y width height",
+        "body": [
+            "query rect unit ${1:null} ${2:0} ${3:0} ${4:10} ${5:10};"
+        ]
+    },
+    "矩形区域查询建筑 (特权指令)\\nteam x y width height": {
+        "prefix": "query.rect.building",
+        "description": "矩形区域查询建筑 (特权指令)\\nteam x y width height",
+        "body": [
+            "query rect building ${1:null} ${2:0} ${3:0} ${4:10} ${5:10};"
+        ]
+    },
+    "播放音乐 (特权指令)\\nname interrupt": {
+        "prefix": "playmusic",
+        "description": "播放音乐 (特权指令)\\nname interrupt",
+        "body": [
+            "playmusic ${1:\"game1\"} ${2:true};"
         ]
     },
     "逻辑块建筑自身": {
@@ -750,6 +799,13 @@
         "description": "运行代码的客户端是否为移动端",
         "body": [
             "@clientMobile"
+        ]
+    },
+    "运行代码的客户端是否正在播放音乐": {
+        "prefix": "env.clientMusicPlaying",
+        "description": "运行代码的客户端是否正在播放音乐",
+        "body": [
+            "@clientMusicPlaying"
         ]
     },
     "被处理器控制, 用于传感器的`@controlled`返回结果,": {
@@ -1774,6 +1830,97 @@
             "sensor ${2:color} $1 @color;"
         ]
     },
+    "建造点 x 坐标": {
+        "prefix": "sensor.buildX",
+        "description": "建造点 x 坐标",
+        "body": [
+            "sensor ${2:buildX} $1 @buildX;"
+        ]
+    },
+    "建造点 y 坐标": {
+        "prefix": "sensor.buildY",
+        "description": "建造点 y 坐标",
+        "body": [
+            "sensor ${2:buildY} $1 @buildY;"
+        ]
+    },
+    "ping 标记 x 坐标": {
+        "prefix": "sensor.pingX",
+        "description": "ping 标记 x 坐标",
+        "body": [
+            "sensor ${2:pingX} $1 @pingX;"
+        ]
+    },
+    "ping 标记 y 坐标": {
+        "prefix": "sensor.pingY",
+        "description": "ping 标记 y 坐标",
+        "body": [
+            "sensor ${2:pingY} $1 @pingY;"
+        ]
+    },
+    "ping 标记文本": {
+        "prefix": "sensor.pingText",
+        "description": "ping 标记文本",
+        "body": [
+            "sensor ${2:pingText} $1 @pingText;"
+        ]
+    },
+    "是否正在建造": {
+        "prefix": "sensor.building",
+        "description": "是否正在建造",
+        "body": [
+            "sensor ${2:building} $1 @building;"
+        ]
+    },
+    "是否正在拆除": {
+        "prefix": "sensor.breaking",
+        "description": "是否正在拆除",
+        "body": [
+            "sensor ${2:breaking} $1 @breaking;"
+        ]
+    },
+    "是否在飞行": {
+        "prefix": "sensor.flying",
+        "description": "是否在飞行",
+        "body": [
+            "sensor ${2:flying} $1 @flying;"
+        ]
+    },
+    "最大单位数": {
+        "prefix": "sensor.maxUnits",
+        "description": "最大单位数",
+        "body": [
+            "sensor ${2:maxUnits} $1 @maxUnits;"
+        ]
+    },
+    "选中的方块类型": {
+        "prefix": "sensor.selectedBlock",
+        "description": "选中的方块类型",
+        "body": [
+            "sensor ${2:selectedBlock} $1 @selectedBlock;"
+        ]
+    },
+    "选中的方块旋转": {
+        "prefix": "sensor.selectedRotation",
+        "description": "选中的方块旋转",
+        "body": [
+            "sensor ${2:selectedRotation} $1 @selectedRotation;"
+        ]
+    },
+    "子弹寿命": {
+        "prefix": "sensor.bulletLifetime",
+        "description": "子弹寿命",
+        "body": [
+            "sensor ${2:bulletLifetime} $1 @bulletLifetime;"
+        ]
+    },
+    "子弹时间": {
+        "prefix": "sensor.bulletTime",
+        "description": "子弹时间",
+        "body": [
+            "sensor ${2:bulletTime} $1 @bulletTime;"
+        ]
+    },
     "指定颜色填满屏幕": {
         "prefix": "draw.clear",
         "description": "指定颜色填满屏幕",
@@ -2355,6 +2502,20 @@
             "setprop @payloadType ${1:block1} ${2:0};"
         ]
     },
+    "设置子弹时间": {
+        "prefix": "setprop.bulletTime",
+        "description": "设置子弹时间",
+        "body": [
+            "setprop @bulletTime ${1:block1} ${2:0};"
+        ]
+    },
+    "设置子弹寿命": {
+        "prefix": "setprop.bulletLifetime",
+        "description": "设置子弹寿命",
+        "body": [
+            "setprop @bulletLifetime ${1:block1} ${2:0};"
+        ]
+    },
     "设置当前波次倒计时 (tick)": {
         "prefix": "setrule.currentWaveTime",
         "description": "设置当前波次倒计时 (tick)",
@@ -2549,6 +2710,13 @@
         "description": "设置队伍RTS 小队最小规模",
         "body": [
             "setrule rtsMinSquad ${1:10} ${2:@sharded} 0 0 0;"
+        ]
+    },
+    "设置是否禁止暂停": {
+        "prefix": "setrule.pauseDisabled",
+        "description": "设置是否禁止暂停",
+        "body": [
+            "setrule pauseDisabled ${1:1} 0 0 0 0;"
         ]
     }
 }
