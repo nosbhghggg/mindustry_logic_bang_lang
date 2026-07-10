@@ -262,20 +262,11 @@ endsnippet
 snippet printchar "按字符码打印字符 (如 65='A')" w
 printchar ${1:65};
 endsnippet
-snippet bullet "生成子弹 (特权指令)\nresult from index x y rotation team owner damage velocityScl lifeScl aimX aimY" b
-${1:result} = bullet ${2:@dagger} ${3:0} ${4:x} ${5:y} ${6:angle} ${7:null} ${8:null} ${9:-1} ${10:1} ${11:1} ${12:-1} ${13:-1};
+snippet bullet "生成子弹 (特权指令)" b
+bullet result @dagger 0 x y angle null null -1 1 1 -1 -1;
 endsnippet
-snippet query.circle.unit "圆形区域查询单位 (特权指令)\nteam x y radius" b
-query circle unit ${1:null} ${2:0} ${3:0} ${4:10} 0;
-endsnippet
-snippet query.circle.building "圆形区域查询建筑 (特权指令)\nteam x y radius" b
-query circle building ${1:null} ${2:0} ${3:0} ${4:10} 0;
-endsnippet
-snippet query.rect.unit "矩形区域查询单位 (特权指令)\nteam x y width height" b
-query rect unit ${1:null} ${2:0} ${3:0} ${4:10} ${5:10};
-endsnippet
-snippet query.rect.building "矩形区域查询建筑 (特权指令)\nteam x y width height" b
-query rect building ${1:null} ${2:0} ${3:0} ${4:10} ${5:10};
+snippet query "区域查询 (circle|rect) (unit|building) (特权指令)" b
+query circle unit null 0 0 10 10;
 endsnippet
 snippet playmusic "播放音乐 (特权指令)\nname interrupt" b
 playmusic ${1:"game1"} ${2:true};
@@ -818,43 +809,43 @@ endsnippet
 snippet sensor.color "颜色" w
 sensor ${2:color} $1 @color;
 endsnippet
-snippet sensor.buildX "建造点 x 坐标" w
+snippet sensor.buildX "建造或拆除点X" w
 sensor ${2:buildX} $1 @buildX;
 endsnippet
-snippet sensor.buildY "建造点 y 坐标" w
+snippet sensor.buildY "建造或拆除点Y" w
 sensor ${2:buildY} $1 @buildY;
 endsnippet
-snippet sensor.pingX "ping 标记 x 坐标" w
+snippet sensor.pingX "标记X" w
 sensor ${2:pingX} $1 @pingX;
 endsnippet
-snippet sensor.pingY "ping 标记 y 坐标" w
+snippet sensor.pingY "标记Y" w
 sensor ${2:pingY} $1 @pingY;
 endsnippet
-snippet sensor.pingText "ping 标记文本" w
+snippet sensor.pingText "标记文本" w
 sensor ${2:pingText} $1 @pingText;
 endsnippet
-snippet sensor.building "是否正在建造" w
+snippet sensor.building "正在建造的建筑" w
 sensor ${2:building} $1 @building;
 endsnippet
-snippet sensor.breaking "是否正在拆除" w
+snippet sensor.breaking "正在拆除的建筑" w
 sensor ${2:breaking} $1 @breaking;
 endsnippet
-snippet sensor.flying "是否在飞行" w
+snippet sensor.flying "是否飞行" w
 sensor ${2:flying} $1 @flying;
 endsnippet
 snippet sensor.maxUnits "最大单位数" w
 sensor ${2:maxUnits} $1 @maxUnits;
 endsnippet
-snippet sensor.selectedBlock "选中的方块类型" w
+snippet sensor.selectedBlock "建造栏选择的建筑" w
 sensor ${2:selectedBlock} $1 @selectedBlock;
 endsnippet
-snippet sensor.selectedRotation "选中的方块旋转" w
+snippet sensor.selectedRotation "建造栏建造朝向" w
 sensor ${2:selectedRotation} $1 @selectedRotation;
 endsnippet
-snippet sensor.bulletLifetime "子弹寿命" w
+snippet sensor.bulletLifetime "子弹可存活时间" w
 sensor ${2:bulletLifetime} $1 @bulletLifetime;
 endsnippet
-snippet sensor.bulletTime "子弹时间" w
+snippet sensor.bulletTime "子弹已存活时间" w
 sensor ${2:bulletTime} $1 @bulletTime;
 endsnippet
 
