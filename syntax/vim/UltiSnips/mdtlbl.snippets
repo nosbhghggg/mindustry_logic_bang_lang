@@ -626,13 +626,13 @@ endsnippet
 snippet sensor.totalItems "总物品数" w
 sensor ${2:totalItems} $1 @totalItems;
 endsnippet
-snippet sensor.firstItem "第一个物品" w
+snippet sensor.firstItem "首个物品" w
 sensor ${2:firstItem} $1 @firstItem;
 endsnippet
 snippet sensor.totalLiquids "总液体数" w
 sensor ${2:totalLiquids} $1 @totalLiquids;
 endsnippet
-snippet sensor.totalPower "总电力数" w
+snippet sensor.totalPower "全电量" w
 sensor ${2:totalPower} $1 @totalPower;
 endsnippet
 snippet sensor.itemCapacity "物品容量" w
@@ -644,16 +644,16 @@ endsnippet
 snippet sensor.powerCapacity "电力容量" w
 sensor ${2:powerCapacity} $1 @powerCapacity;
 endsnippet
-snippet sensor.powerNetStored "电网当前已储电" w
+snippet sensor.powerNetStored "电网电池储电" w
 sensor ${2:powerNetStored} $1 @powerNetStored;
 endsnippet
-snippet sensor.powerNetCapacity "电网储电总容量" w
+snippet sensor.powerNetCapacity "电网电池容量" w
 sensor ${2:powerNetCapacity} $1 @powerNetCapacity;
 endsnippet
-snippet sensor.powerNetIn "电网净输入" w
+snippet sensor.powerNetIn "电网净输入(发电)" w
 sensor ${2:powerNetIn} $1 @powerNetIn;
 endsnippet
-snippet sensor.powerNetOut "电网净输出" w
+snippet sensor.powerNetOut "电网净输出(耗电)" w
 sensor ${2:powerNetOut} $1 @powerNetOut;
 endsnippet
 snippet sensor.ammo "弹药" w
@@ -662,7 +662,7 @@ endsnippet
 snippet sensor.ammoCapacity "弹药容量" w
 sensor ${2:ammoCapacity} $1 @ammoCapacity;
 endsnippet
-snippet sensor.currentAmmoType "弹药类型" w
+snippet sensor.currentAmmoType "当前弹药类型" w
 sensor ${2:currentAmmoType} $1 @currentAmmoType;
 endsnippet
 snippet sensor.memoryCapacity "内存容量" w
@@ -677,7 +677,7 @@ endsnippet
 snippet sensor.heat "热量" w
 sensor ${2:heat} $1 @heat;
 endsnippet
-snippet sensor.shield "盾" w
+snippet sensor.shield "盾量" w
 sensor ${2:shield} $1 @shield;
 endsnippet
 snippet sensor.armor "护甲" w
@@ -689,22 +689,22 @@ endsnippet
 snippet sensor.progress "进度" w
 sensor ${2:progress} $1 @progress;
 endsnippet
-snippet sensor.timescale "时间系数 (用于被超速的速度)" w
+snippet sensor.timescale "时间系数" w
 sensor ${2:timescale} $1 @timescale;
 endsnippet
 snippet sensor.rotation "朝向" w
 sensor ${2:rotation} $1 @rotation;
 endsnippet
-snippet sensor.x "x坐标" w
+snippet sensor.x "X坐标" w
 sensor ${2:x} $1 @x;
 endsnippet
-snippet sensor.y "y坐标" w
+snippet sensor.y "Y坐标" w
 sensor ${2:y} $1 @y;
 endsnippet
-snippet sensor.velocityX "运动速度x" w
+snippet sensor.velocityX "运动速度X" w
 sensor ${2:velocityX} $1 @velocityX;
 endsnippet
-snippet sensor.velocityY "运动速度y" w
+snippet sensor.velocityY "运动速度Y" w
 sensor ${2:velocityY} $1 @velocityY;
 endsnippet
 snippet sensor.shootX "射击点X" w
@@ -713,10 +713,10 @@ endsnippet
 snippet sensor.shootY "射击点Y" w
 sensor ${2:shootY} $1 @shootY;
 endsnippet
-snippet sensor.cameraX "相机位置X" w
+snippet sensor.cameraX "相机X" w
 sensor ${2:cameraX} $1 @cameraX;
 endsnippet
-snippet sensor.cameraY "相机位置Y" w
+snippet sensor.cameraY "相机Y" w
 sensor ${2:cameraY} $1 @cameraY;
 endsnippet
 snippet sensor.cameraWidth "相机宽度" w
@@ -731,7 +731,7 @@ endsnippet
 snippet sensor.solid "是否实心" w
 sensor ${2:solid} $1 @solid;
 endsnippet
-snippet sensor.dead "已死亡" w
+snippet sensor.dead "是否已死亡" w
 sensor ${2:dead} $1 @dead;
 endsnippet
 snippet sensor.displayWidth "显示屏宽度" w
@@ -749,10 +749,10 @@ endsnippet
 snippet sensor.boosting "是否助推" w
 sensor ${2:boosting} $1 @boosting;
 endsnippet
-snippet sensor.bufferSize "显示器图形缓冲区中未处理的指令数" w
+snippet sensor.bufferSize "缓冲区待绘制数" w
 sensor ${2:bufferSize} $1 @bufferSize;
 endsnippet
-snippet sensor.operations "块被操作的次数, 例如屏幕被drawflush的次数" w
+snippet sensor.operations "方块操作次数" w
 sensor ${2:operations} $1 @operations;
 endsnippet
 snippet sensor.mineX "挖矿点X" w
@@ -797,13 +797,13 @@ endsnippet
 snippet sensor.payloadCapacity "荷载容量" w
 sensor ${2:payloadCapacity} $1 @payloadCapacity;
 endsnippet
-snippet sensor.id "编号(lookup 反向, 用于 content)" w
+snippet sensor.id "编号" w
 sensor ${2:id} $1 @id;
 endsnippet
 snippet sensor.enabled "启用" w
 sensor ${2:enabled} $1 @enabled;
 endsnippet
-snippet sensor.config "设置, 例如分类器物品" w
+snippet sensor.config "设置" w
 sensor ${2:config} $1 @config;
 endsnippet
 snippet sensor.color "颜色" w
