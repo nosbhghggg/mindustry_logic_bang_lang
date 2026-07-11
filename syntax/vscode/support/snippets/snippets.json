@@ -1382,9 +1382,9 @@
             "sensor ${2:totalItems} $1 @totalItems;"
         ]
     },
-    "第一个物品": {
+    "首个物品": {
         "prefix": "sensor.firstItem",
-        "description": "第一个物品",
+        "description": "首个物品",
         "body": [
             "sensor ${2:firstItem} $1 @firstItem;"
         ]
@@ -1396,9 +1396,9 @@
             "sensor ${2:totalLiquids} $1 @totalLiquids;"
         ]
     },
-    "总电力数": {
+    "全电量": {
         "prefix": "sensor.totalPower",
-        "description": "总电力数",
+        "description": "全电量",
         "body": [
             "sensor ${2:totalPower} $1 @totalPower;"
         ]
@@ -1424,30 +1424,30 @@
             "sensor ${2:powerCapacity} $1 @powerCapacity;"
         ]
     },
-    "电网当前已储电": {
+    "电网电池储电": {
         "prefix": "sensor.powerNetStored",
-        "description": "电网当前已储电",
+        "description": "电网电池储电",
         "body": [
             "sensor ${2:powerNetStored} $1 @powerNetStored;"
         ]
     },
-    "电网储电总容量": {
+    "电网电池容量": {
         "prefix": "sensor.powerNetCapacity",
-        "description": "电网储电总容量",
+        "description": "电网电池容量",
         "body": [
             "sensor ${2:powerNetCapacity} $1 @powerNetCapacity;"
         ]
     },
-    "电网净输入": {
+    "电网净输入(发电)": {
         "prefix": "sensor.powerNetIn",
-        "description": "电网净输入",
+        "description": "电网净输入(发电)",
         "body": [
             "sensor ${2:powerNetIn} $1 @powerNetIn;"
         ]
     },
-    "电网净输出": {
+    "电网净输出(耗电)": {
         "prefix": "sensor.powerNetOut",
-        "description": "电网净输出",
+        "description": "电网净输出(耗电)",
         "body": [
             "sensor ${2:powerNetOut} $1 @powerNetOut;"
         ]
@@ -1466,9 +1466,9 @@
             "sensor ${2:ammoCapacity} $1 @ammoCapacity;"
         ]
     },
-    "弹药类型": {
+    "当前弹药类型": {
         "prefix": "sensor.currentAmmoType",
-        "description": "弹药类型",
+        "description": "当前弹药类型",
         "body": [
             "sensor ${2:currentAmmoType} $1 @currentAmmoType;"
         ]
@@ -1501,9 +1501,9 @@
             "sensor ${2:heat} $1 @heat;"
         ]
     },
-    "盾": {
+    "盾量": {
         "prefix": "sensor.shield",
-        "description": "盾",
+        "description": "盾量",
         "body": [
             "sensor ${2:shield} $1 @shield;"
         ]
@@ -1529,9 +1529,9 @@
             "sensor ${2:progress} $1 @progress;"
         ]
     },
-    "时间系数 (用于被超速的速度)": {
+    "时间系数": {
         "prefix": "sensor.timescale",
-        "description": "时间系数 (用于被超速的速度)",
+        "description": "时间系数",
         "body": [
             "sensor ${2:timescale} $1 @timescale;"
         ]
@@ -1543,30 +1543,30 @@
             "sensor ${2:rotation} $1 @rotation;"
         ]
     },
-    "x坐标": {
+    "X坐标": {
         "prefix": "sensor.x",
-        "description": "x坐标",
+        "description": "X坐标",
         "body": [
             "sensor ${2:x} $1 @x;"
         ]
     },
-    "y坐标": {
+    "Y坐标": {
         "prefix": "sensor.y",
-        "description": "y坐标",
+        "description": "Y坐标",
         "body": [
             "sensor ${2:y} $1 @y;"
         ]
     },
-    "运动速度x": {
+    "运动速度X": {
         "prefix": "sensor.velocityX",
-        "description": "运动速度x",
+        "description": "运动速度X",
         "body": [
             "sensor ${2:velocityX} $1 @velocityX;"
         ]
     },
-    "运动速度y": {
+    "运动速度Y": {
         "prefix": "sensor.velocityY",
-        "description": "运动速度y",
+        "description": "运动速度Y",
         "body": [
             "sensor ${2:velocityY} $1 @velocityY;"
         ]
@@ -1585,16 +1585,16 @@
             "sensor ${2:shootY} $1 @shootY;"
         ]
     },
-    "相机位置X": {
+    "相机X": {
         "prefix": "sensor.cameraX",
-        "description": "相机位置X",
+        "description": "相机X",
         "body": [
             "sensor ${2:cameraX} $1 @cameraX;"
         ]
     },
-    "相机位置Y": {
+    "相机Y": {
         "prefix": "sensor.cameraY",
-        "description": "相机位置Y",
+        "description": "相机Y",
         "body": [
             "sensor ${2:cameraY} $1 @cameraY;"
         ]
@@ -1627,9 +1627,9 @@
             "sensor ${2:solid} $1 @solid;"
         ]
     },
-    "已死亡": {
+    "是否已死亡": {
         "prefix": "sensor.dead",
-        "description": "已死亡",
+        "description": "是否已死亡",
         "body": [
             "sensor ${2:dead} $1 @dead;"
         ]
@@ -1669,16 +1669,16 @@
             "sensor ${2:boosting} $1 @boosting;"
         ]
     },
-    "显示器图形缓冲区中未处理的指令数": {
+    "缓冲区待绘制数": {
         "prefix": "sensor.bufferSize",
-        "description": "显示器图形缓冲区中未处理的指令数",
+        "description": "缓冲区待绘制数",
         "body": [
             "sensor ${2:bufferSize} $1 @bufferSize;"
         ]
     },
-    "块被操作的次数, 例如屏幕被drawflush的次数": {
+    "方块操作次数": {
         "prefix": "sensor.operations",
-        "description": "块被操作的次数, 例如屏幕被drawflush的次数",
+        "description": "方块操作次数",
         "body": [
             "sensor ${2:operations} $1 @operations;"
         ]
@@ -1781,9 +1781,9 @@
             "sensor ${2:payloadCapacity} $1 @payloadCapacity;"
         ]
     },
-    "编号(lookup 反向, 用于 content)": {
+    "编号": {
         "prefix": "sensor.id",
-        "description": "编号(lookup 反向, 用于 content)",
+        "description": "编号",
         "body": [
             "sensor ${2:id} $1 @id;"
         ]
@@ -1795,9 +1795,9 @@
             "sensor ${2:enabled} $1 @enabled;"
         ]
     },
-    "设置, 例如分类器物品": {
+    "设置": {
         "prefix": "sensor.config",
-        "description": "设置, 例如分类器物品",
+        "description": "设置",
         "body": [
             "sensor ${2:config} $1 @config;"
         ]
