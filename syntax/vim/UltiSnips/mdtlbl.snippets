@@ -689,7 +689,7 @@ endsnippet
 snippet sensor.progress "进度" w
 sensor ${2:progress} $1 @progress;
 endsnippet
-snippet sensor.timescale "时间系数" w
+snippet sensor.timescale "时间系数 (用于被超速的速度)" w
 sensor ${2:timescale} $1 @timescale;
 endsnippet
 snippet sensor.rotation "朝向" w
@@ -752,7 +752,7 @@ endsnippet
 snippet sensor.bufferSize "缓冲区待绘制数" w
 sensor ${2:bufferSize} $1 @bufferSize;
 endsnippet
-snippet sensor.operations "方块操作次数" w
+snippet sensor.operations "块被操作的次数, 例如屏幕被drawflush的次数" w
 sensor ${2:operations} $1 @operations;
 endsnippet
 snippet sensor.mineX "挖矿点X" w
@@ -797,13 +797,13 @@ endsnippet
 snippet sensor.payloadCapacity "荷载容量" w
 sensor ${2:payloadCapacity} $1 @payloadCapacity;
 endsnippet
-snippet sensor.id "编号" w
+snippet sensor.id "编号(lookup 反向, 用于 content)" w
 sensor ${2:id} $1 @id;
 endsnippet
 snippet sensor.enabled "启用" w
 sensor ${2:enabled} $1 @enabled;
 endsnippet
-snippet sensor.config "设置" w
+snippet sensor.config "设置, 例如分类器物品" w
 sensor ${2:config} $1 @config;
 endsnippet
 snippet sensor.color "颜色" w
