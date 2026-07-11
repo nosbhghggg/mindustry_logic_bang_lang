@@ -1529,9 +1529,9 @@
             "sensor ${2:progress} $1 @progress;"
         ]
     },
-    "时间系数": {
+    "时间系数 (用于被超速的速度)": {
         "prefix": "sensor.timescale",
-        "description": "时间系数",
+        "description": "时间系数 (用于被超速的速度)",
         "body": [
             "sensor ${2:timescale} $1 @timescale;"
         ]
@@ -1676,9 +1676,9 @@
             "sensor ${2:bufferSize} $1 @bufferSize;"
         ]
     },
-    "方块操作次数": {
+    "块被操作的次数, 例如屏幕被drawflush的次数": {
         "prefix": "sensor.operations",
-        "description": "方块操作次数",
+        "description": "块被操作的次数, 例如屏幕被drawflush的次数",
         "body": [
             "sensor ${2:operations} $1 @operations;"
         ]
@@ -1781,9 +1781,9 @@
             "sensor ${2:payloadCapacity} $1 @payloadCapacity;"
         ]
     },
-    "编号": {
+    "编号(lookup 反向, 用于 content)": {
         "prefix": "sensor.id",
-        "description": "编号",
+        "description": "编号(lookup 反向, 用于 content)",
         "body": [
             "sensor ${2:id} $1 @id;"
         ]
@@ -1795,9 +1795,9 @@
             "sensor ${2:enabled} $1 @enabled;"
         ]
     },
-    "设置": {
+    "设置, 例如分类器物品": {
         "prefix": "sensor.config",
-        "description": "设置",
+        "description": "设置, 例如分类器物品",
         "body": [
             "sensor ${2:config} $1 @config;"
         ]
